@@ -7,5 +7,3 @@
     @apply bg-gradient-to-b from-[#14307A] from-60% to-[#7075DB] text-white;
   }
 }
-
-@layer utilities {}
