@@ -14,20 +14,20 @@ export default function Home() {
 
   return (
     <div className="flex justify-center min-h-screen p-4 md:p-32">
-      <div className="max-w-fit rounded-lg h-fit overflow-none">
+      <div className="max-w-fit rounded-lg h-fit shadow shadow-black">
         <div className="flex bg-white/20 gap-1 p-2 rounded-t-lg items-center">
           <div className="w-3 h-3 bg-red-400 rounded-full" />
           <div className="w-3 h-3 bg-yellow-400 rounded-full" />
           <div className="w-3 h-3 bg-green-400 rounded-full" />
-          <h1 className="text-xs text-white/70 flex-grow text-center">
+          <h1 className="text-xs text-white/80 flex-grow text-center">
             nobrayner.dev
           </h1>
           <div className="w-3 h-3" />
           <div className="w-3 h-3" />
           <div className="w-3 h-3" />
         </div>
-        <main className="p-4 bg-black rounded-b-lg border border-white/40 border-t-0">
-          <p className="text-white/60">
+        <main className="p-4 bg-black rounded-b-lg box-content">
+          <p className="text-white/70">
             Last login: {now_string} on ttys{ttys_num}
           </p>
           <br />
@@ -69,7 +69,7 @@ const ITEMS: Item[] = [
   {
     type: "link",
     name: "LinkedIn",
-    count: 1,
+    count: 35,
     style: "text-blue-400",
     date: "2024-08-26T13:29:00.000Z",
     size: 51,
@@ -78,7 +78,7 @@ const ITEMS: Item[] = [
   {
     type: "link",
     name: "GitHub",
-    count: 7,
+    count: 264,
     style: "text-gray-300",
     date: "2018-07-02T00:00:00.000Z",
     size: 28,
@@ -87,7 +87,7 @@ const ITEMS: Item[] = [
   {
     type: "file",
     name: "resume.pdf",
-    count: 5,
+    count: 78,
     style: "text-gray-400",
     date: "2024-06-10T12:43:00.000Z",
     size: 278094,
@@ -96,7 +96,7 @@ const ITEMS: Item[] = [
   {
     type: "link",
     name: "Contact me",
-    count: 364,
+    count: 377,
     style: "text-green-400",
     date: "2024-01-01T00:00:00.000Z",
     size: 0,
@@ -126,10 +126,13 @@ function ListItem({
 
   return (
     <div>
-      <a href={url}>
-        <pre className="inline whitespace-break-spaces">
+      <a href={url} className="group">
+        <pre className="inline">
           {TYPE_MAP[type]} {count.toString().padStart(LONGEST_ITEM_COUNT, " ")}{" "}
-          nobrayner visitors {size.toString().padStart(LONGEST_ITEM_CHARS, " ")}{" "}
+          nobrayner visitors {size.toString().padStart(LONGEST_ITEM_CHARS, " ")}
+        </pre>
+        <wbr />{" "}
+        <pre className="inline">
           {date.getDate().toString().padStart(2, " ")}{" "}
           {date.toLocaleString(undefined, {
             month: "short",
@@ -137,7 +140,9 @@ function ListItem({
           {date.getTime() > six_months_ago.getTime()
             ? `${date.getHours().toString().padStart(2, "0")}:${date.getMinutes().toString().padStart(2, "0")}`
             : date.getFullYear().toString().padStart(5, " ")}{" "}
-          <span className={style}>{name}</span>
+          <span className={`${style} group-hover:underline underline-offset-2`}>
+            {name}
+          </span>
         </pre>
       </a>
     </div>
