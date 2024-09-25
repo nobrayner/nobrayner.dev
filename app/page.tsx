@@ -14,6 +14,7 @@ export default function Home() {
 
   return (
     <div className="flex justify-center min-h-screen p-4 md:p-32">
+      <h1>HI</h1>
       <div className="max-w-fit rounded-lg h-fit shadow shadow-black">
         <div className="flex bg-white/20 gap-1 p-2 rounded-t-lg items-center">
           <div className="w-3 h-3 bg-red-400 rounded-full" />
