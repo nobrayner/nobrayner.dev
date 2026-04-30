@@ -86,7 +86,7 @@ const ITEMS: Item[] = [
   },
   {
     type: "file",
-    name: "resume.pdf",
+    name: "CV.pdf",
     count: 78,
     style: "text-gray-400",
     date: "2024-06-10T12:43:00.000Z",
