@@ -91,7 +91,7 @@ const ITEMS: Item[] = [
     style: "text-gray-400",
     date: "2024-06-10T12:43:00.000Z",
     size: 278094,
-    url: "/Braydon Hall - Software Engineer.pdf",
+    url: "/CV.pdf",
   },
   {
     type: "link",
